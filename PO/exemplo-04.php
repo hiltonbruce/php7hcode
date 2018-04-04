@@ -15,7 +15,7 @@
 
     public function __destruct()
     {
-      var_dump('Destruir');
+      //var_dump('Destruir');
     }
 
     public function __toString() {
