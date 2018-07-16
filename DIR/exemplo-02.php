@@ -13,7 +13,7 @@
 
       $info = pathinfo($filenema);
 
-      $info['size'] = filesize($filenema);
+      $info['size'] = (filesize($filenema)/1024).' Kb';
 
       $info ['group'] = filegroup($filenema);
 
@@ -26,6 +26,8 @@
       $info ['modofield'] = date('d/m/Y H:i:s', filemtime($filenema));
       $info ['acessado'] = date('d/m/Y H:i:s', fileatime($filenema));
       $info ['url'] = 'http://localhost/Udemy/'.$filenema;
+
+      // echo '&bull; '.$info['url'].'<br />';
 
       // var_dump ($info);
       array_push($data, $info);

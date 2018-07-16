@@ -9,7 +9,7 @@
 
   }else {
 
-    rmdir($name);
+    rmdir ($name);
     echo "Já exite o diretório: $name foi removido";
 
   }
