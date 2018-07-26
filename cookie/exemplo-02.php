@@ -6,9 +6,6 @@
 
     echo $obj->empresa;
 
-  } else {
-    # code...
   }
-
-
+  
  ?>
