@@ -1,15 +1,17 @@
 <?php
 
-header("Content-Type: image/png");
+$image = imagecreatefromjpeg('certificado.jpg');
 
-$image = imagecreate(256, 256);
+$titleColor = imagecolorallocate($image, 0, 0, 0);
+$grey = imagecolorallocate($image, 100, 100, 100);
 
-$black = imagecolorallocate($image, 100, 255, 100);
-$red = imagecolorallocate($image, 255, 0, 0);
+imagestring($image, 5, 450, 150, 'CERTIFICADO', $titleColor);
+imagestring($image, 5, 440, 350, 'Divanei Aparecido', $titleColor);
+imagestring($image, 3, 440, 470, utf8_decode('Concluído em: ').date('d/m/Y'), $titleColor);
 
-imagestring($image, 5, 60, 120, 'Curso de PHP 7', $red);
+header('Content-type: image/jpeg');
 
-imagepng($image);
+imagejpeg($image, 'certificado-'.date('Y-m-d').'jpg', 10);
 
 imagedestroy($image);
 
